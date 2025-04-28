@@ -1,4 +1,4 @@
-module WebServer
+module ZHBI
 
 go 1.24.2
 
