@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>处理结果</title>
+    <script src="/static/result.js"></script>
+</head>
+<body>
+    <h1>处理结果</h1>
+    <div id="status">正在处理...</div>
+
+    <script>
+        const taskID = "{{.ID}}";
+        pollStatus(taskID);
+    </script>
+
+    {{if .Workdir}}
+    <hr class="uk-divider-icon" />
+    <div class="uk-align-center uk-card uk-card-large uk-card-hover">
+      <div class="uk-card-title">
+        <h2 class="uk-heading-bullet"><span>结果:</span></h2>
+      </div>
+      <div class="uk-card-body">
+        <ul>
+          <li><a href="{{.Workdir}}/{{.Basename}}.zip" target="_blank">{{.Basename}}.zip</a></li>
+          <li><a href="{{.Workdir}}/{{.Basename}}" target="_blank">{{.Basename}}</a></li>
+          <!-- <li><a href="public/{{.}}.tar" target="_blank">{{.}}.tar</a></li> -->
+        </ul>
+      </div>
+    </div>
+    {{end}}
+
+</body>
+</html>
