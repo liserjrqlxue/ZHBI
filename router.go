@@ -115,7 +115,7 @@ func processTask(task *Task) {
 	}
 
 	taskMux.Lock()
-	err := sge.Run("../../SynOrdEval.exe", args...)
+	err := sge.Run("../SynOrdEval/SynOrdEval.exe", args...)
 	if err != nil {
 		task.Status = "Failed"
 		task.Result = fmt.Sprintf("分析失败: err=[%+v]", err)
